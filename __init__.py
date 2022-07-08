@@ -1,17 +1,19 @@
 from models.Deck import Deck
-from models.Player import Player
-
-import logging
-
-logging.basicConfig(filename='logs/main.log', level=logging.INFO)
+from models.Game import Game
+from models.User import User
 
 myDeck = Deck()
 myDeck.shuffle()
 
-facu = Player('Facu')
-facu.draw(myDeck, 3)
+facu = Game("Facu")
+facu.draw(myDeck, 5)
 facu.showHand()
 
-delfi = Player('Delfi')
-delfi.draw(myDeck, 3)
+delfi = Game("Delfi")
+delfi.draw(myDeck, 5)
 delfi.showHand()
+
+facuUser = User('Facundo', 'Vicente', 20)
+delfiUser = User('Delfina', 'Gerea', 20)
+
+print(User('facu', 'vicente', 20))

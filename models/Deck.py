@@ -1,8 +1,5 @@
 import random
-import logging
 from models.Card import Card
-
-logging.basicConfig(filename='logs/deck.log', level=logging.INFO)
 
 class Deck(object):
 

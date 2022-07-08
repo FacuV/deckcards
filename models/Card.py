@@ -1,7 +1,3 @@
-import logging
-
-logging.basicConfig(filename='logs/card.log', level=logging.INFO)
-
 class Card(object):    
 
     def __init__(self, suit, val):
@@ -23,7 +19,6 @@ class Card(object):
 
         return f"{val} de {self.suit}"
 
-    # Implementing build in methods so that you can print a card object
     def __unicode__(self):
         return self.show()
     def __str__(self):

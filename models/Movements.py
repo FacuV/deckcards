@@ -1,13 +1,15 @@
+from abc import ABC, abstractmethod
 import logging
 
-logging.basicConfig(filename='logs/player.log', level=logging.INFO)
+logging.basicConfig(filename='logs/main.log', level=logging.INFO)
 
-class Player(object):
+class Movements(ABC, object):
 
     def __init__(self, name):
         self.name = name
         self.hand = []
 
+    @abstractmethod
     def sayHello(self):
         ''' Say hello to the player '''
         try:
@@ -19,6 +21,7 @@ class Player(object):
             print("Error: {}".format(e))
             return self
 
+    @abstractmethod
     def draw(self, deck, num=1):
         ''' Draw n number of cards from a deck '''
         try:
@@ -30,11 +33,12 @@ class Player(object):
             print("Error: {}".format(e))
             return self
 
+    @abstractmethod
     def showHand(self):
         ''' Show the cards in the hand '''
 
         try:
-            logging.info("{}'s hand: {}".format(self.name, self.hand))
+            logging.info (f"Mano de {self.name}: {self.hand}")
             print (f"Mano de {self.name}: {self.hand}")
             return self
         except Exception as e:
@@ -42,6 +46,7 @@ class Player(object):
             print("Error: {}".format(e))
             return self
 
+    @abstractmethod
     def discard(self):
         ''' Discard all cards in the hand '''
         return self.hand.pop()
