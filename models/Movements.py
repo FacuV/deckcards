@@ -1,8 +1,6 @@
 from abc import ABC, abstractmethod
 import logging
 
-logging.basicConfig(filename='logs/main.log', level=logging.INFO)
-
 class Movements(ABC, object):
 
     def __init__(self, name):

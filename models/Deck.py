@@ -39,4 +39,4 @@ class Deck(object):
         return self.cards.pop()
 
     def __str__(self):
-        return self.show() 
+        return "Deck: {}".format(self.cards)

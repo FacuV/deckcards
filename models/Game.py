@@ -1,5 +1,3 @@
-from abc import ABC
-import logging
 from models.Movements import Movements
 
 class Game(Movements):
@@ -11,10 +9,9 @@ class Game(Movements):
 
     def showHand(self):
         return super().showHand()
-    
+
     def discard(self):
         return super().discard()
-    
+        
     def __str__(self):
-        logging.info(f'Bienvenido a Blackjack! {self.name}')
-        return self
+        return 'Hola! {}'.format(self.name)

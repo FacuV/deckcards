@@ -1,7 +1,5 @@
 import logging
 
-logging.basicConfig(filename='logs/user.log', level=logging.INFO)
-
 class User:
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
@@ -27,5 +25,6 @@ class User:
         self.age = age
 
     def __str__(self):
+        logging.info('User: ' + self.first_name + ' ' + self.last_name + ' ' + str(self.age))
         return "User: {} {} age: {}".format(self.first_name, self.last_name, self.age)
         
