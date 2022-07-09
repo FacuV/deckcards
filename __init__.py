@@ -1,6 +1,9 @@
 from models.Deck import Deck
 from models.Game import Game
 from models.User import User
+import logging
+
+logging.basicConfig(filename='logs/main.log', level=logging.INFO)
 
 myDeck = Deck()
 myDeck.shuffle()
